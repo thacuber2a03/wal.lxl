@@ -5,15 +5,15 @@ Integrates `pywal` into Lite XL, so that your probably-favourite-text-editor als
 
 ## Installation
 
-### Through LPM (Lite XL Package Manager)
+### Through [LPM (Lite XL Package Manager)](https://github.com/lite-xl/lite-xl-package-manager)
 Just call `lpm install wal.lxl` and restart. :)
 
-### Manual
+### Manually
 `git clone` the repository into `~/.config/lite-xl/plugins/wal`. Then, restart the editor.
 ```bash
 git clone https://github.com/ThaCuber/wal ~/.config/lite-xl/plugins/wal
 ```
-You can also download the source code and either rename `init.lua` to `wal.lua`, or make a new folder and store the `init.lua` as-is onto it
+You can also download the source code and either rename `init.lua` to `wal.lua`, or make a new folder and store the `init.lua` as-is onto it. This allows you to add other files alongside it later.
 
 ## Configuration
 
@@ -25,7 +25,7 @@ All of them are tables and they go like so:
 * `syntax_brightness`: The brightness of the syntax hightlighter's colors.
 
 Each field has, as key, the `style` field you want to modify, and as value, the index of a color, or a special color.
-(yeah, this means Evergreen.lxl is implicitly supported)
+(yeah, this means [Evergreen.lxl](https://github.com/TorchedSammy/Evergreen.lxl) is implicitly supported)
 
 Example config:
 ```lua
