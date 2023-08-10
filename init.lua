@@ -6,6 +6,11 @@ local command = require 'core.command'
 local style = require 'core.style'
 local json = require 'libraries.json'
 
+-- NOTE:
+-- this plugin has some defaults set,
+-- but they're not the best.
+-- it is always recommended that the user
+-- customize the colors as they see fit.
 config.plugins.wal = common.merge({
 	colors = {
 		background = "background",
@@ -96,11 +101,6 @@ local function get_cached_file_mod()
 end
 
 core.add_thread(function()
-	-- this plugin has some defaults set,
-	-- but they're not the best.
-	-- it is always recommended that the user
-	-- customize the colors as they see fit.
-
 	apply_wal() -- apply at start
 	local last_mod = get_cached_file_mod()
 	while true do
