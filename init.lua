@@ -41,11 +41,6 @@ config.plugins.wal = common.merge({
 		line_number2 = 1.5,
 	},
 	syntax_brightness = {},
-	config_spec = {
-		{
-			label = "Enabled",
-		},
-	}
 }, config.plugins.wal)
 
 local colors_file_name = common.home_expand "~/.cache/wal/colors.json"
