@@ -1,7 +1,7 @@
 # wal.lxl
 Integrates `pywal` into Lite XL, so that your probably-favourite-text-editor also looks sorta like your wallpaper. (thank me later, Arch users)
 
-**NOTE**: The plugin has some defaults set, but it is highly recommended that you customize them, as they're not perfect. (I chose them, and I suck at theming, sooo...)
+**NOTE**: The plugin has some defaults set, but it is highly recommended that you customize them, as they're not perfect. (Especially to light theme users.)
 
 ## Installation
 
@@ -40,8 +40,8 @@ wal.colors.caret = "cursor" -- set caret's color to "special.cursor"
 
 ## Screenshots
 
-![image](https://github.com/ThaCuber/wal.lxl/assets/70547062/c9751b9c-00a7-4659-a1b2-14c862317ca7)
-![image](https://github.com/ThaCuber/wal.lxl/assets/70547062/60f1c3ef-0c48-403b-b293-6127ca0d1f4e)
-![image](https://github.com/ThaCuber/wal.lxl/assets/70547062/af75cdea-97ea-4cf4-9c06-432b318af284)
-![image](https://github.com/ThaCuber/wal.lxl/assets/70547062/6c1f24b4-2e1b-490b-aaa8-d1186f964e7e)
-![image](https://github.com/ThaCuber/wal.lxl/assets/70547062/bb62bd6a-19e1-4ed0-88c7-4b47d44af747)
+![image](https://github.com/ThaCuber/wal.lxl/assets/70547062/acee6714-9a7d-46fc-b5b6-65aded3d10d4)
+![image](https://github.com/ThaCuber/wal.lxl/assets/70547062/b8ee301d-4f7c-49a3-b822-f741dd372d93)
+![image](https://github.com/ThaCuber/wal.lxl/assets/70547062/ba2e2465-e05e-43f1-ab0d-6984a62e0b08)
+![image](https://github.com/ThaCuber/wal.lxl/assets/70547062/8f3e7119-cb3a-4cef-b24c-bba00c5bb581)
+
