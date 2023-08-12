@@ -21,7 +21,7 @@ config.plugins.wal = common.merge({
 		accent = 5,
 		caret = "cursor",
 		dim = 6,
-		divider = 7,
+		divider = "foreground",
 		selection = "foreground",
 		line_number = 9,
 		line_number2 = 9,
@@ -48,9 +48,10 @@ config.plugins.wal = common.merge({
 		selection = 0.2,
 		line_highlight = 1.5,
 		line_number2 = 1.5,
+		divider = 0.5,
 	},
 	syntax_brightness = {
-		comment = 0.4
+		comment = 0.4,
 	},
 }, config.plugins.wal)
 
