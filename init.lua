@@ -6,11 +6,6 @@ local command = require 'core.command'
 local style = require 'core.style'
 local json = require 'libraries.json'
 
--- NOTE:
--- this plugin has some defaults set,
--- but they're not the best.
--- it is always recommended that the user
--- customize the colors as they see fit.
 config.plugins.wal = common.merge({
 	colors = {
 		background = "background",
@@ -21,31 +16,36 @@ config.plugins.wal = common.merge({
 		caret = "cursor",
 		dim = 6,
 		divider = 7,
-		selection = 0,
+		selection = "foreground",
 		line_number = 9,
 		line_number2 = 9,
-		line_highlight = 0,
+		line_highlight = "background",
 		scrollbar = 12,
 		scrollbar2 = 13,
 	},
 	syntax_colors = {
 		normal = 7,
 		symbol = 7,
-		comment = 6,
+		comment = "foreground",
 		keyword = 3,
 		keyword2 = 4,
-		number = 4,
+		number = 2,
 		literal = 4,
-		string = 5,
+		string = 2,
 		operator = 8,
 		["function"] = 4,
 	},
 	brightness = {
-		selection = 1.5,
+		background = 2,
+		background2 = 1.5,
+		background3 = 1.25,
+		selection = 0.2,
 		line_highlight = 1.5,
 		line_number2 = 1.5,
 	},
-	syntax_brightness = {},
+	syntax_brightness = {
+		comment = 0.4
+	},
 }, config.plugins.wal)
 
 local colors_file_name = common.home_expand "~/.cache/wal/colors.json"
@@ -59,8 +59,13 @@ local function no_cached_file()
 end
 
 local function brighten(c, a)
-	-- imagine changing the brightness of alpha lmao
-	return { c[1] * a, c[2] * a, c[3] * a, c[4] }
+	a = a or 1
+	return {
+		common.clamp(c[1] * a, 0, 255),
+		common.clamp(c[2] * a, 0, 255),
+		common.clamp(c[3] * a, 0, 255),
+		c[4] -- imagine changing the brightness of alpha lmao
+	}
 end
 
 local function get_color(wal, col)
@@ -87,20 +92,28 @@ local function apply_wal()
 	local wal = json.decode(colors_file:read "*a")
 	colors_file:close()
 
-	for k, v in pairs(conf.colors)            do style[k]        = get_color(wal, v) end
-	for k, v in pairs(conf.syntax_colors)     do style.syntax[k] = get_color(wal, v) end
-	for k, v in pairs(conf.brightness)        do style[k]        = brighten(style[k], v) end
-	for k, v in pairs(conf.syntax_brightness) do style.syntax[k] = brighten(style.syntax[k], v) end
+	for k, v in pairs(conf.colors) do
+		style[k] = brighten(get_color(wal, v), conf.brightness[k])
+	end
+
+	for k, v in pairs(conf.syntax_colors) do
+		style.syntax[k] = brighten(get_color(wal, v), conf.syntax_brightness[k])
+	end
 end
 
 local function get_cached_file_mod()
 	local info = system.get_file_info(colors_file_name)
 	if not info then no_cached_file() end
-	---@cast info -nil
+	---@cast info -?
 	return info.modified
 end
 
 core.add_thread(function()
+	-- this plugin has some defaults set,
+	-- but they're not the best.
+	-- it is always recommended that the user
+	-- customize the colors as they see fit.
+
 	apply_wal() -- apply at start
 	local last_mod = get_cached_file_mod()
 	while true do
@@ -113,6 +126,4 @@ core.add_thread(function()
 	end
 end)
 
-command.add(nil, {
-	["wal:apply"] = apply_wal,
-})
+command.add(nil, { ["wal:apply"] = apply_wal, })
