@@ -1,5 +1,5 @@
 # wal.lxl
-Integrates [`pywal`](https://github.com/dylanaraps/pywal) into Lite XL, so that your probably-favourite-text-editor also looks sorta like your wallpaper. (thank me later, Arch users)
+Integrates [pywal](https://github.com/dylanaraps/pywal) into Lite XL, so that your probably-favourite-text-editor also looks sorta like your wallpaper. (thank me later, Arch users)
 
 **NOTE**: The plugin has some defaults set, but it is highly recommended that you customize them, as they're not perfect. (Especially to light theme users.)
 
