@@ -6,7 +6,7 @@ Integrates [pywal](https://github.com/dylanaraps/pywal) into Lite XL, so that yo
 ## Installation
 
 ### Through [LPM (Lite XL Plugin Manager)](https://github.com/lite-xl/lite-xl-plugin-manager)
-Just call `lpm install wal.lxl` and restart. :)
+Just call `lpm install wal` and restart. :)
 
 ### Manually
 `git clone` the repository into `~/.config/lite-xl/plugins/wal`. Then, restart the editor.
