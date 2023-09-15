@@ -5,7 +5,7 @@ Integrates [pywal](https://github.com/dylanaraps/pywal) into Lite XL, so that yo
 
 ## Installation
 
-### Through [LPM (Lite XL Package Manager)](https://github.com/lite-xl/lite-xl-package-manager)
+### Through [LPM (Lite XL Plugin Manager)](https://github.com/lite-xl/lite-xl-plugin-manager)
 Just call `lpm install wal.lxl` and restart. :)
 
 ### Manually
