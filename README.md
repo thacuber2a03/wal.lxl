@@ -11,7 +11,7 @@ Just call `lpm install wal` and restart. :)
 ### Manually
 `git clone` the repository into `~/.config/lite-xl/plugins/wal`. Then, restart the editor.
 ```bash
-git clone https://github.com/ThaCuber/wal ~/.config/lite-xl/plugins/wal
+git clone https://github.com/thacuber2a03/wal.lxl ~/.config/lite-xl/plugins/wal
 ```
 You can also download the source code and either rename `init.lua` to `wal.lua`, or make a new folder and store the `init.lua` as-is onto it. This allows you to add other files alongside it later.
 
